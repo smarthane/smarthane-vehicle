@@ -1,0 +1,27 @@
+apply from: "config.gradle"
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        //lambda
+        classpath 'me.tatarka:gradle-retrolambda:3.6.0'
+        //Gradle Android Maven plugin
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        //Gradle Bintray Plugin
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    }
+}
+allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.google.com/'}
+        maven { url 'http://raw.github.com/saki4510t/libcommon/master/repository/' }
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
