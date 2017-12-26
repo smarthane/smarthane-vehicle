@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 
+import com.smarthane.vehicle.app.jni.JNISample;
 import com.smarthane.vehicle.di.component.DaggerMainComponent;
 import com.smarthane.vehicle.di.module.MainModule;
 import com.smarthane.vehicle.mvp.contract.MainContract;
@@ -81,7 +82,10 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     @Override
     public void initData(Bundle savedInstanceState) {
         mPresenter.requestPermissions();
-
+        tvTest.setText(JNISample.getSample());
+        if (true) {
+            return;
+        }
 
         String[] names = new String[]{"kobe", "james", "jodon"};
 
@@ -239,6 +243,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                         Log.w("RXJAVA", "onComplete: ");
                     }
                 });
+
+
+
 
 
     }
