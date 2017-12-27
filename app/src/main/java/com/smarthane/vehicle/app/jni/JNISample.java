@@ -13,4 +13,10 @@ public class JNISample {
 
     public static native String getSample();
 
+    public static native int intParams(int x,int y);
+
+    public static native String strParams(String str);
+
+    public static native int[] arrParams(int[] arr);
+
 }

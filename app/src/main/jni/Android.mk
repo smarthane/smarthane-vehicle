@@ -20,5 +20,9 @@ include $(CLEAR_VARS)
 LOCAL_MODULE    := hello-jni
 LOCAL_SRC_FILES := hello-jni.c
 #要编译的C的代码的文件名
+
+#加载liblog.so
+LOCAL_LDLIBS += -llog
+
 include $(BUILD_SHARED_LIBRARY)
 #生成的是一个动态链接库.so

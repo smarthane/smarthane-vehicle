@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
@@ -254,7 +255,19 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @OnClick({R.id.btn_test})
     public void onClick(View view) {
-        subscription.request(50);
+        //subscription.request(50);
+        int c = JNISample.intParams(3, 5);
+        Toast.makeText(this, c+"", Toast.LENGTH_SHORT).show();
+
+        String str = JNISample.strParams("abcde");
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+
+        int[] arr = new int[]{1,2,3,4,5};
+        int[] result = JNISample.arrParams(arr);
+
+        for (int i=0;i<result.length;i++) {
+            System.out.println("result = "+ result[i]);
+        }
     }
 
     @Override
