@@ -18,7 +18,7 @@ char* jstringTostring(JNIEnv* env, jstring jstr)
     jbyte* ba = (*env)->GetByteArrayElements(env,barr, JNI_FALSE);
     if (alen > 0)
     {
-        rtn = (char*)malloc(alen + 1);
+        rtn = (char*)malloc(alen + 1);// "\0"
         memcpy(rtn, ba, alen);
         rtn[alen] = 0;
     }
